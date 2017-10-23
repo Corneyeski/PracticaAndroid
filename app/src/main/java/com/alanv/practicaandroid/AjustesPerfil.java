@@ -1,13 +1,16 @@
 package com.alanv.practicaandroid;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 
@@ -21,22 +24,25 @@ public class AjustesPerfil extends AppCompatActivity {
 
     ImageButton camara;
     ImageView photo;
-
-    Bundle savedData = new Bundle();
+    EditText name;
+//
+//    Bundle savedData = new Bundle();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes_perfil);
 
+        name = (EditText) findViewById(R.id.username);
+
         photo = (ImageView) findViewById(R.id.photo);
 
-        if(savedData != null && savedData.getString("foto") != null){
-            byte [] encodeByte= Base64.decode(savedData.getString("foto"),Base64.DEFAULT);
-            Bitmap bitmap= BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
-
-            photo.setImageBitmap(bitmap);
-        }
+//        if(savedData != null && savedData.getString("foto") != null){
+//            byte [] encodeByte= Base64.decode(savedData.getString("foto"),Base64.DEFAULT);
+//            Bitmap bitmap= BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+//
+//            photo.setImageBitmap(bitmap);
+//        }
 
         camara = (ImageButton) findViewById(R.id.camera);
 
@@ -52,15 +58,55 @@ public class AjustesPerfil extends AppCompatActivity {
         });
     }
     @Override
+    protected void onResume(){
+        super.onResume();
+        //Restauracion de datos
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+
+        String photoString = pref.getString("foto", "intento fallido");
+
+        if(!photoString.equals("intento fallido")) {
+            byte[] encodeByte = Base64.decode(photoString, Base64.DEFAULT);
+            Bitmap bitmap = BitmapFactory.decodeByteArray(encodeByte, 0, encodeByte.length);
+
+            photo.setImageBitmap(bitmap);
+        }
+    }
+    @Override
+    protected void onPause(){
+        //Aqui guardamos datos
+
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor ed = pref.edit();
+
+        String nameText = name.getText().toString();
+
+        ed.putString("username", nameText);
+       // ed.putString("foto",bitMapToString((Bitmap) photo.getDrawable().));
+
+        ed.commit();
+
+       super.onPause();
+
+    }
+
+    @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
             Bitmap imageBitmap = (Bitmap) extras.get("data");
             photo.setImageBitmap(imageBitmap);
 
-            savedData.putString("foto",bitMapToString(imageBitmap));
+            SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+            SharedPreferences.Editor ed = pref.edit();
 
-            System.out.println(savedData.getString("foto"));
+            //savedData.putString("foto",bitMapToString(imageBitmap));
+
+            ed.putString("foto",bitMapToString(imageBitmap));
+
+            ed.commit();
+            //System.out.println(savedData.getString("foto"));
         }
     }
 

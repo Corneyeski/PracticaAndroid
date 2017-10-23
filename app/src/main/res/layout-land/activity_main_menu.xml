@@ -7,52 +7,68 @@
     tools:context="com.alanv.practicaandroid.MainMenu">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/linearLayout2"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/jugar"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="75dp"
-            android:text="jugar" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/ranquing"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/jugar"
-            android:layout_below="@+id/jugar"
-            android:layout_marginTop="42dp"
-            android:text="ranquing" />
+            <Button
+                android:id="@+id/jugar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="75dp"
+                android:text="jugar" />
+
+            <Button
+                android:id="@+id/ranquing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/jugar"
+                android:layout_below="@+id/jugar"
+                android:layout_marginTop="42dp"
+                android:text="ranquing" />
+
+        </RelativeLayout>
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout2"
+        android:layout_width="300dp"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true">
 
-        <Button
-            android:id="@+id/ajustaments"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/ranquing"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="29dp"
-            android:text="ajustaments" />
+            android:layout_height="match_parent">
 
-        <Button
-            android:id="@+id/quant"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@+id/ranquing"
-            android:layout_below="@+id/ajustaments"
-            android:layout_marginTop="38dp"
-            android:text="quant a" />
+            <Button
+                android:id="@+id/ajustaments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="36dp"
+                android:text="ajustaments"
+                android:layout_above="@+id/quant"
+                android:layout_centerHorizontal="true" />
+
+            <Button
+                android:id="@+id/quant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="109dp"
+                android:text="quant a"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
 
     </LinearLayout>
 
