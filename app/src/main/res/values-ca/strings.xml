@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PracticaAndroid</string>
+    <string name="name">nom:</string>
+    <string name="play">Jugar</string>
+    <string name="ranking">ranquing</string>
+    <string name="settings">opcions</string>
+    <string name="about">quant a</string>
+</resources>

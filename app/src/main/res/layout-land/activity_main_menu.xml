@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.alanv.practicaandroid.MainMenu">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/jugar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="75dp"
+            android:text="jugar" />
+
+        <Button
+            android:id="@+id/ranquing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/jugar"
+            android:layout_below="@+id/jugar"
+            android:layout_marginTop="42dp"
+            android:text="ranquing" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/ajustaments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ranquing"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="29dp"
+            android:text="ajustaments" />
+
+        <Button
+            android:id="@+id/quant"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/ranquing"
+            android:layout_below="@+id/ajustaments"
+            android:layout_marginTop="38dp"
+            android:text="quant a" />
+
+    </LinearLayout>
+
+</RelativeLayout>
