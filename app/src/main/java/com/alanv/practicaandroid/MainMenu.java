@@ -56,7 +56,7 @@ public class MainMenu extends AppCompatActivity {
         quant.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(MainMenu.this, TikTakToeActivity.class);
 
                 startActivity(intent);
             }
