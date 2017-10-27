@@ -5,4 +5,6 @@
     <string name="ranking">ranking</string>
     <string name="settings">settings</string>
     <string name="about">about</string>
+    <string name="reboot">reboot</string>
+    <string name="over">Game over</string>
 </resources>
