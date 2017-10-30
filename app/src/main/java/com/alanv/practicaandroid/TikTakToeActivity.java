@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +16,25 @@ import java.util.List;
     boolean who = false;
     int count;
 
+    int pPlayerOne;
+    int pPlayerTwo;
+
+    TextView gameOver;
+    Button reboot;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tik_tak_toe);
+        gameOver = (TextView) findViewById(R.id.gameOver);
+        reboot = (Button) findViewById(R.id.reboot);
+
+        reboot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                restart();
+            }
+        });
     }
 
     public void xOrO(View view){
@@ -42,11 +58,25 @@ import java.util.List;
         }
     }
 
-    private void restart(){
+    private void end(){
+        gameOver.setVisibility(View.VISIBLE);
+        reboot.setVisibility(View.VISIBLE);
+
+
+    }
+
+    public void restart(){
         for(Button b : buttons){
             b.setText("");
         }
         buttons.removeAll(buttons);
         count = 0;
+
+        gameOver.setVisibility(View.INVISIBLE);
+        reboot.setVisibility(View.INVISIBLE);
+    }
+
+    public void check(){
+
     }
 }

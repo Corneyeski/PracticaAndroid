@@ -2,6 +2,8 @@
     <string name="app_name">PracticaAndroid</string>
     <string name="name">nombre:</string>
     <string name="play">jugar</string>
+    <string name="playerOne">Jugador uno:</string>
+    <string name="playerTwo">Jugador dos:</string>
     <string name="ranking">ranquing</string>
     <string name="settings">opciones</string>
     <string name="about">sobre</string>

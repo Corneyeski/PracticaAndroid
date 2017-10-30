@@ -98,25 +98,25 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/playerOne"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="@string/playerOne" />
 
             <TextView
-                android:id="@+id/textView"
+                android:id="@+id/playerTwo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="@string/playerTwo" />
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/who"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="@string/play" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/gameOver"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_horizontal"
@@ -126,10 +126,11 @@
                 android:visibility="invisible" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/reboot"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/reboot" />
+                android:text="@string/reboot"
+                android:visibility="invisible" />
         </LinearLayout>
 
     </LinearLayout>
