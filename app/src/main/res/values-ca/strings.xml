@@ -2,7 +2,11 @@
     <string name="app_name">PracticaAndroid</string>
     <string name="name">nom:</string>
     <string name="play">Jugar</string>
+    <string name="playerOne">jugador un:</string>
+    <string name="playerTwo">jugador dos:</string>
     <string name="ranking">ranquing</string>
     <string name="settings">opcions</string>
     <string name="about">quant a</string>
+    <string name="reboot">reiniciar</string>
+    <string name="over">fi del joc</string>
 </resources>

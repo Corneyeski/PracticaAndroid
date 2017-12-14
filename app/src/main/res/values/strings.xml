@@ -2,7 +2,11 @@
     <string name="app_name">AndroidJob</string>
     <string name="name">name:</string>
     <string name="play">Play</string>
+    <string name="playerOne">player one:</string>
+    <string name="playerTwo">player two:</string>
     <string name="ranking">ranking</string>
     <string name="settings">settings</string>
     <string name="about">about</string>
+    <string name="reboot">reboot</string>
+    <string name="over">Game over</string>
 </resources>
