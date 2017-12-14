@@ -21,7 +21,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".AjustesPerfil" />
-        <activity android:name=".TikTakToeActivity"></activity>
+        <activity android:name=".TikTakToeActivity" />
+        <activity android:name=".RankingMenu" />
+        <activity android:name=".Ranking"></activity>
     </application>
 
 </manifest>
