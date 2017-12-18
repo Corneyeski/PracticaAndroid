@@ -23,7 +23,8 @@
         <activity android:name=".AjustesPerfil" />
         <activity android:name=".TikTakToeActivity" />
         <activity android:name=".RankingMenu" />
-        <activity android:name=".Ranking"></activity>
+        <activity android:name=".Ranking" />
+        <activity android:name=".adapter.RankingListAdapter"></activity>
     </application>
 
 </manifest>

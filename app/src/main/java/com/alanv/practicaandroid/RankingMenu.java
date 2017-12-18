@@ -15,7 +15,7 @@ public class RankingMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ranking_menu);
 
-        snake = (Button) findViewById(R.id.snake);
+        snake = findViewById(R.id.snake);
 
         snake.setOnClickListener(new View.OnClickListener() {
             @Override
