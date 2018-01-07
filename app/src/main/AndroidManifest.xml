@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.alanv.practicaandroid">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-feature
         android:name="android.hardware.camera"
         android:required="true" />
@@ -24,7 +26,6 @@
         <activity android:name=".TikTakToeActivity" />
         <activity android:name=".RankingMenu" />
         <activity android:name=".Ranking" />
-        <activity android:name=".adapter.RankingListAdapter"></activity>
     </application>
 
 </manifest>

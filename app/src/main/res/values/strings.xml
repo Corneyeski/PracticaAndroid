@@ -9,5 +9,5 @@
     <string name="about">about</string>
     <string name="reboot">reboot</string>
     <string name="over">Game over</string>
-    <string name="searchUrlGame" translatable="false">http://stucom.flx.cat/game/api/game</string>
+    <string name="searchUrlGame" translatable="false">http://stucom.flx.cat/game/api/game/</string>
 </resources>

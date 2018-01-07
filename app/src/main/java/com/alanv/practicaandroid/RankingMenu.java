@@ -20,7 +20,7 @@ public class RankingMenu extends AppCompatActivity {
         snake.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(RankingMenu.this, AjustesPerfil.class);
+                Intent intent = new Intent(RankingMenu.this, Ranking.class);
 
                 startActivity(intent);
             }

@@ -24,13 +24,14 @@ public class Ranking extends AppCompatActivity implements
 
         recyclerView = findViewById(R.id.recycleView);
 
+        search();
 
     }
 
     public void search() {
         recyclerView.setAdapter(null);
         RankingSnakeSearchTask task = new RankingSnakeSearchTask(this);
-        task.execute();
+        task.execute("1");
     }
 
     @Override

@@ -18,7 +18,7 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        jugar = (Button) findViewById(R.id.jugar);
+        jugar = findViewById(R.id.jugar);
 
         jugar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,18 +29,18 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        ranquing = (Button) findViewById(R.id.ranquing);
+        ranquing = findViewById(R.id.ranquing);
 
         ranquing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(MainMenu.this, RankingMenu.class);
 
                 startActivity(intent);
             }
         });
 
-        ajustes = (Button) findViewById(R.id.ajustaments);
+        ajustes = findViewById(R.id.ajustaments);
 
         ajustes.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +51,7 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        quant = (Button) findViewById(R.id.quant);
+        quant = findViewById(R.id.quant);
 
         quant.setOnClickListener(new View.OnClickListener() {
             @Override
