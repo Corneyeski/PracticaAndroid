@@ -28,12 +28,13 @@ public class RankingListAdapter
 
     class RankingSetViewHolder extends ViewHolder{
 
-        GameRanking set;
+        UserRanking set;
         ImageView avatar;
-        TextView score, username;
+        TextView id, score, username;
 
         public RankingSetViewHolder(View view) {
             super(view);
+            id = view.findViewById(R.id.id);
             avatar = view.findViewById(R.id.avatar);
             score = view.findViewById(R.id.score);
             username = view.findViewById(R.id.username);
@@ -61,17 +62,16 @@ public class RankingListAdapter
         if (list == null) return;
         RankingSetViewHolder vh = (RankingSetViewHolder) holder;
         UserRanking set = list.getRanking().get(position);
-        Context context = vh.tvSetNum.getContext();
+        Context context = vh.id.getContext();
         vh.set = set;
-        vh.tvSetNum.setText(set.getSetNum());
-        vh.tvName.setText(set.getName());
-        vh.tvYear.setText(context.getString(R.string.year, set.getYear()));
-        vh.tvNumParts.setText(context.getString(R.string.numParts, set.getNumParts()));
-        Picasso.with(context).load(set.getSetImgUrl()).into(vh.imgSet);
+        vh.id.setText(set.getId());
+        vh.username.setText(set.getUser().getUsername());
+        vh.score.setText(String.valueOf(set.getScore()));
+        Picasso.with(context).load(set.getUser().getAvatar()).into(vh.avatar);
     }
 
     @Override
     public int getItemCount() {
-        return 0;
+        return (list == null) ? 1 : list.getRanking().size();
     }
 }
