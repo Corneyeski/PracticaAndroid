@@ -101,12 +101,9 @@ public class RankingSnakeSearchTask extends AsyncTask<String,Integer,GameRanking
     /**
      * TODO esto oculta la barra de carga
      */
-    /*@Override
+    @Override
     public void onPostExecute(GameRanking result) {
-        // Log.d("flx", "onPostExecute()");
-        ProgressBar pb = ref.getProgressBar();
-        pb.setVisibility(View.INVISIBLE);
         ref.finished(result);
-    }*/
+    }
 
 }

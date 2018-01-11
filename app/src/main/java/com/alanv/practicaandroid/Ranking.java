@@ -29,7 +29,6 @@ public class Ranking extends AppCompatActivity implements
     }
 
     public void search() {
-        recyclerView.setAdapter(null);
         RankingSnakeSearchTask task = new RankingSnakeSearchTask(this);
         task.execute("1");
     }

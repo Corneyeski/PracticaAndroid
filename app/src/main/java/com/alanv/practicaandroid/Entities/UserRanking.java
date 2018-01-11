@@ -1,14 +1,18 @@
 package com.alanv.practicaandroid.Entities;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by alanv on 11/12/2017.
  */
 
 public class UserRanking {
     int id;
+    @SerializedName("user_id")
     int userId;
+    @SerializedName("game_id")
     int gameId;
-    long Score;
+    long score;
     User user;
 
     public UserRanking() {
@@ -18,7 +22,7 @@ public class UserRanking {
         this.id = id;
         this.userId = userId;
         this.gameId = gameId;
-        Score = score;
+        this.score = score;
         this.user = user;
     }
 
@@ -47,11 +51,11 @@ public class UserRanking {
     }
 
     public long getScore() {
-        return Score;
+        return score;
     }
 
     public void setScore(long score) {
-        Score = score;
+        this.score = score;
     }
 
     public User getUser() {

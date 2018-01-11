@@ -64,7 +64,7 @@ public class RankingListAdapter
         UserRanking set = list.getRanking().get(position);
         Context context = vh.id.getContext();
         vh.set = set;
-        vh.id.setText(set.getId());
+        vh.id.setText(String.valueOf(set.getId()));
         vh.username.setText(set.getUser().getUsername());
         vh.score.setText(String.valueOf(set.getScore()));
         Picasso.with(context).load(set.getUser().getAvatar()).into(vh.avatar);

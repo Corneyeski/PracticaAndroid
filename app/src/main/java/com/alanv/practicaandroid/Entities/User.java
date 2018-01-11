@@ -1,5 +1,7 @@
 package com.alanv.practicaandroid.Entities;
 
+import com.google.gson.annotations.SerializedName;
+
 /**
  * Created by alanv on 11/12/2017.
  */
@@ -10,6 +12,7 @@ public class User {
     String firstname;
     String lastname;
     String email;
+    @SerializedName("avatar_path")
     String avatar;
 
     public User() {
