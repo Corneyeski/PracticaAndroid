@@ -27,8 +27,8 @@ public class RankingMenuSearchTask extends AsyncTask<String,Integer,List<GameRan
         Context getContext();
         void finished(GameRanking list);
     }
-    private RankingSnakeSearchTask.WeakReference ref;
-    public RankingMenuSearchTask(RankingSnakeSearchTask.WeakReference ref) {
+    private WeakReference ref;
+    public RankingMenuSearchTask(WeakReference ref) {
         super();
         this.ref = ref;
     }
