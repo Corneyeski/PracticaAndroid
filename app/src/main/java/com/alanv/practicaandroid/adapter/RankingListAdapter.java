@@ -38,8 +38,6 @@ public class RankingListAdapter
             avatar = view.findViewById(R.id.avatar);
             score = view.findViewById(R.id.score);
             username = view.findViewById(R.id.username);
-
-
         }
     }
 
@@ -48,11 +46,11 @@ public class RankingListAdapter
 
         if (list == null) {
             View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.activity_ranking_view, parent, false);
+                    .inflate(R.layout.view_user_ranking, parent, false);
             return new ViewHolder(itemView);
         }else {
             View itemView = LayoutInflater.from(parent.getContext())
-                    .inflate(R.layout.activity_ranking_view, parent, false);
+                    .inflate(R.layout.view_user_ranking, parent, false);
             return new RankingSetViewHolder(itemView);
         }
     }
