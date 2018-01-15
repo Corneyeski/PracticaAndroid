@@ -64,7 +64,7 @@ public class RankingMenuSearchTask extends AsyncTask<String,Integer,List<GameRan
             Gson gson = new Gson();
             ReceivedGame list = gson.fromJson(json, ReceivedGame.class);
 
-            return null;
+            return list.getData();
         }
         catch (Exception e) {
             Log.e("alan", e.getMessage());

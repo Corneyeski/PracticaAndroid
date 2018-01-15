@@ -87,7 +87,7 @@ public class RankingSnakeSearchTask extends AsyncTask<String,Integer,GameRanking
             Gson gson = new Gson();
             ReceivedGame list = gson.fromJson(json, ReceivedGame.class);
 
-            return list.getData();
+            return list.getData().get(0);
         }
         catch (Exception e) {
             Log.e("alan", e.getMessage());
