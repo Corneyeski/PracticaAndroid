@@ -33,13 +33,14 @@ public class RankingMenuAdapter extends RecyclerView.Adapter<RankingMenuAdapter.
 
         GameRanking set;
         ImageButton image;
-        TextView name, description;
+        TextView name, description, id;
 
         public RankingMenuSetViewHolder(View view) {
             super(view);
             image = view.findViewById(R.id.image);
             name = view.findViewById(R.id.gameName);
             description = view.findViewById(R.id.description);
+            id = view.findViewById(R.id.id);
         }
     }
 
@@ -68,7 +69,7 @@ public class RankingMenuAdapter extends RecyclerView.Adapter<RankingMenuAdapter.
         RankingMenuSetViewHolder view = (RankingMenuSetViewHolder) holder;
         GameRanking set = list.get(position);
 
-        Context context = (Context) view.image.getContentDescription();
+        Context context = view.id.getContext();
         view.set = set;
         view.name.setText(set.getName());
         view.description.setText(set.getDescription());

@@ -4,13 +4,18 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 
 import com.alanv.practicaandroid.Entities.GameRanking;
+import com.alanv.practicaandroid.adapter.RankingMenuAdapter;
 import com.alanv.practicaandroid.asynctask.RankingMenuSearchTask;
 import com.alanv.practicaandroid.asynctask.RankingSnakeSearchTask;
+
+import java.util.List;
 
 public class RankingMenu extends AppCompatActivity
         implements RankingMenuSearchTask.WeakReference {
@@ -34,6 +39,8 @@ public class RankingMenu extends AppCompatActivity
                 startActivity(intent);
             }
         });
+
+        search();
     }
 
     public void search() {
@@ -43,11 +50,16 @@ public class RankingMenu extends AppCompatActivity
 
     @Override
     public Context getContext() {
-        return null;
+        return this;
     }
 
     @Override
-    public void finished(GameRanking list) {
+    public void finished(List<GameRanking> list) {
 
+        RankingMenuAdapter adapter = new RankingMenuAdapter(list);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
     }
 }

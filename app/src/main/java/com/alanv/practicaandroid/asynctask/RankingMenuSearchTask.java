@@ -25,7 +25,7 @@ public class RankingMenuSearchTask extends AsyncTask<String,Integer,List<GameRan
 
     public interface WeakReference {
         Context getContext();
-        void finished(GameRanking list);
+        void finished(List<GameRanking> list);
     }
     private WeakReference ref;
     public RankingMenuSearchTask(WeakReference ref) {
@@ -75,8 +75,8 @@ public class RankingMenuSearchTask extends AsyncTask<String,Integer,List<GameRan
         }
     }
 
-    //@Override
-    public void onPostExecute(GameRanking result) {
+    @Override
+    public void onPostExecute(List<GameRanking> result) {
         ref.finished(result);
     }
 }
