@@ -41,7 +41,22 @@ public class RankingMenuAdapter extends RecyclerView.Adapter<RankingMenuAdapter.
             name = view.findViewById(R.id.gameName);
             description = view.findViewById(R.id.description);
             id = view.findViewById(R.id.id);
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    if (set == null) return;
+                    if (listener != null) listener.itemClicked(view, set);
+                }
+            });
         }
+    }
+
+    public interface OnItemClickListener {
+        void itemClicked(View view, GameRanking set);
+    }
+    private OnItemClickListener listener;
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     @Override

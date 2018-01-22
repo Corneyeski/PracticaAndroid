@@ -1,6 +1,7 @@
 package com.alanv.practicaandroid;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -30,7 +31,12 @@ public class Ranking extends AppCompatActivity implements
 
     public void search() {
         RankingSnakeSearchTask task = new RankingSnakeSearchTask(this);
-        task.execute("1");
+
+        Intent intent = getIntent();
+
+        if (intent.getStringExtra("game") != null) task.execute(intent.getStringExtra("game"));
+
+        else task.execute("1");
     }
 
     @Override

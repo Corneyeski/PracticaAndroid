@@ -7,18 +7,23 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.alanv.practicaandroid.Entities.GameRanking;
 import com.alanv.practicaandroid.adapter.RankingMenuAdapter;
 import com.alanv.practicaandroid.asynctask.RankingMenuSearchTask;
 import com.alanv.practicaandroid.asynctask.RankingSnakeSearchTask;
+import com.google.gson.Gson;
 
 import java.util.List;
 
 public class RankingMenu extends AppCompatActivity
-        implements RankingMenuSearchTask.WeakReference {
+        implements RankingMenuSearchTask.WeakReference,
+        View.OnClickListener,
+        RankingMenuAdapter.OnItemClickListener {
 
     Button snake;
     RecyclerView recyclerView;
@@ -61,5 +66,19 @@ public class RankingMenu extends AppCompatActivity
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(this);
     }
+
+    @Override
+    public void itemClicked(View view, GameRanking set){
+
+        String setNum = String.valueOf(set.getId());
+        Toast.makeText(view.getContext(), "SET " + setNum, Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(this, Ranking.class);
+        intent.putExtra("game", setNum);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onClick(View view) {}
 }
