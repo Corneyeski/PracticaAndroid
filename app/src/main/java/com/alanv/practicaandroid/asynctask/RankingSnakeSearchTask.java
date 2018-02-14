@@ -8,6 +8,7 @@ import android.widget.ProgressBar;
 
 import com.alanv.practicaandroid.Entities.GameRanking;
 import com.alanv.practicaandroid.Entities.ReceivedGame;
+import com.alanv.practicaandroid.Entities.ReceivedGameRanking;
 import com.alanv.practicaandroid.R;
 import com.google.gson.Gson;
 
@@ -85,9 +86,9 @@ public class RankingSnakeSearchTask extends AsyncTask<String,Integer,GameRanking
 
             // DECODE JSON
             Gson gson = new Gson();
-            ReceivedGame list = gson.fromJson(json, ReceivedGame.class);
+            ReceivedGameRanking list = gson.fromJson(json, ReceivedGameRanking.class);
 
-            return list.getData().get(0);
+            return list.getData();
         }
         catch (Exception e) {
             Log.e("alan", e.getMessage());

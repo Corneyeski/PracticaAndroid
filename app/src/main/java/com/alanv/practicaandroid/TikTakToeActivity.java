@@ -9,7 +9,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-         public class TikTakToeActivity extends AppCompatActivity {
+public class TikTakToeActivity extends AppCompatActivity {
 
     List<Button> buttons = new ArrayList();
 
@@ -21,6 +21,7 @@ import java.util.List;
 
     TextView gameOver;
     Button reboot;
+    TextView whoPlay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ import java.util.List;
         setContentView(R.layout.activity_tik_tak_toe);
         gameOver = (TextView) findViewById(R.id.gameOver);
         reboot = (Button) findViewById(R.id.reboot);
+        whoPlay = findViewById(R.id.who);
 
         reboot.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,9 +47,11 @@ import java.util.List;
             if(!who){
                 c.setText("X");
                 who = true;
+                whoPlay.setText("Play: X");
             }else {
                 c.setText("O");
                 who = false;
+                whoPlay.setText("Play: O");
             }
             count++;
             buttons.add(c);

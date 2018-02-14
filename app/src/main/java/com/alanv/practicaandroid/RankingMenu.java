@@ -80,5 +80,5 @@ public class RankingMenu extends AppCompatActivity
     }
 
     @Override
-    public void onClick(View view) {}
+    public void onClick(View view) {search();}
 }
