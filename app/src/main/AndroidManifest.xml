@@ -26,6 +26,7 @@
         <activity android:name=".TikTakToeActivity" />
         <activity android:name=".RankingMenu" />
         <activity android:name=".Ranking" />
+        <activity android:name=".gamenegine.Game"></activity>
     </application>
 
 </manifest>
