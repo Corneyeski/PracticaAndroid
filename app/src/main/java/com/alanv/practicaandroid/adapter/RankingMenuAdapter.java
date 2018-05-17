@@ -1,6 +1,7 @@
 package com.alanv.practicaandroid.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,7 +10,10 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.alanv.practicaandroid.Entities.GameRanking;
+import com.alanv.practicaandroid.MainMenu;
 import com.alanv.practicaandroid.R;
+import com.alanv.practicaandroid.Ranking;
+import com.alanv.practicaandroid.RankingMenu;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -89,6 +93,15 @@ public class RankingMenuAdapter extends RecyclerView.Adapter<RankingMenuAdapter.
         view.name.setText(set.getName());
         view.description.setText(set.getDescription());
         Picasso.with(context).load(set.getImagePath()).into(view.image);
+
+        /*view.image.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RankingMenu.this, Ranking.class);
+
+                startActivity(intent);
+            }
+        });*/
     }
 
     @Override

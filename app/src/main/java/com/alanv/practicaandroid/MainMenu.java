@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.alanv.practicaandroid.gamenegine.Game;
+
 public class MainMenu extends AppCompatActivity {
 
     Button jugar;
@@ -23,7 +25,7 @@ public class MainMenu extends AppCompatActivity {
         jugar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent();
+                Intent intent = new Intent(MainMenu.this, Game.class);
 
                 startActivity(intent);
             }

@@ -29,7 +29,7 @@ public class GameView extends View {
     @Override
     public void onDraw(Canvas canvas) {
         if (gameEngine == null) return;
-        gameEngine.redraw(canvas);
+        gameEngine.draw(canvas);
     }
 
     @SuppressLint("ClickableViewAccessibility")     // accessibility is virtually impossible
