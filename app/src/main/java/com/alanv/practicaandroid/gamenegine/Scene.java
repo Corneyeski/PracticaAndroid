@@ -134,7 +134,7 @@ public class Scene {
     public int getWaterLevel() { return WATERLEVEL; }
 
     public int getWidth() { return sceneWidth * 16; }
-    int getHeight() { return sceneHeight * 16; }
+    public int getHeight() { return sceneHeight * 16; }
 
     // Scene physics
     void physics(int delta) {
